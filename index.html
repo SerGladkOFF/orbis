@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ORBIS</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@0.7.7/dist/leaflet.css" />
+    <link rel="stylesheet" href="./src/main.css" />
+
+    <script src="https://unpkg.com/leaflet@0.7.7/dist/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+    <script src='//api.tiles.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.3.1/leaflet-omnivore.min.js'></script>
+
+
+</head>
+<body  style="margin:0">
+<main id="mapid" ></main>
+<img src="./src/preload.gif" alt="preload" class="preload">
+<div class="filter">
+     <input id="filter__name" type="name/name_ru">
+ </div>
+<section id="table"></section>
+
+
+
+<script id="table-template" type="text/x-handlebars-template">
+  <div class="entry">
+    <div class="table__body">
+        <ul id="table__list">
+            {{#list _data}}
+            {{/list}}
+        </ul>
+    </div>
+  </div>
+</script>
+<script id="popup" type="text/x-handlebars-template">
+    {{#popup _data}}
+      <span>{{key}}:</span><span>{{value}}</span>
+    {{/popup}}
+</script>
+<script src="main.js"></script>
+</body>
+</html>

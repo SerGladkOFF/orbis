@@ -1,0 +1,66 @@
+
+/*КАРТА*/
+#mapid {
+    width: 100%;
+    height: 54vh
+}
+/*POPUP*/
+.leaflet-popup-content {
+    max-height: 10rem;
+    overflow: auto;
+}
+.leaflet-popup-content p {
+    margin: 0;
+    margin-bottom: 3px;
+}
+.key {
+    font-weight: bold;
+}
+.leaflet-popup-content p:nth-of-type(2n),
+#table__list li:nth-of-type(2n) {
+    background: rgb(193, 193, 193);
+}
+/*ФИЛЬТР*/
+#filter__name {
+    padding: 3px;
+    margin: 3px;
+    width: 98%;
+}
+/*ТАБЛИЦА*/
+#table {
+    height: 36vh;
+    overflow: auto;
+}
+.table__body {
+    font-size: 0.8rem;
+}
+#table__list{
+    list-style: none;
+    padding: 0;
+    padding-left: 10px;
+}
+.geoObjectTitle {
+    position: fixed;
+    background: white;
+    padding: 1rem 0;
+    margin: -0.8rem;
+    width: 100%;
+}
+li.geoObject {
+    display: flex !important;
+    align-items: center;
+}
+li span {
+    width: 9rem;
+    display: inline-block;
+}
+/*ЗАГРУЗКА*/
+.preload {
+    position: absolute;
+    display: block;
+    top:20%;
+    left: 50%;
+}
+.hide {
+    display: none;
+}
