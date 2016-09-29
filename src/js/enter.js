@@ -141,6 +141,7 @@ init.then(()=>{
         };
         //сбрасываем фильтр
         filter__name.value ="";
+        localStorage.setItem("_filter","");
 
         //устанавливаем центра
         map.setView([38.898321, -77.039882], 12);
@@ -175,6 +176,8 @@ init.then(()=>{
         }
         ;
         filter__name.value ="";
+        localStorage.setItem("_filter","");
+
         map.setView([53.228430, 50.229303], 12);
         _features = Model.some_features();
         _features.then((_features)=> {
@@ -203,6 +206,8 @@ init.then(()=>{
         }
         // ;
         filter__name.value ="";
+        localStorage.setItem("_filter","");
+
         map.setView([55.751, 37.716], 12);
         preload.classList.toggle("hide");
         _features = Model.metro_features();

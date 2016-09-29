@@ -192,6 +192,7 @@
 	        };
 	        //сбрасываем фильтр
 	        filter__name.value = "";
+	        localStorage.setItem("_filter", "");
 
 	        //устанавливаем центра
 	        map.setView([38.898321, -77.039882], 12);
@@ -226,6 +227,8 @@
 	        }
 	        ;
 	        filter__name.value = "";
+	        localStorage.setItem("_filter", "");
+
 	        map.setView([53.228430, 50.229303], 12);
 	        _features = _model2.default.some_features();
 	        _features.then(function (_features) {
@@ -254,6 +257,8 @@
 	        }
 	        // ;
 	        filter__name.value = "";
+	        localStorage.setItem("_filter", "");
+
 	        map.setView([55.751, 37.716], 12);
 	        preload.classList.toggle("hide");
 	        _features = _model2.default.metro_features();
