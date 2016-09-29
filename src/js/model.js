@@ -50,35 +50,9 @@ const Model = {
                 }
            })
 
-            // var xhr = new XMLHttpRequest();
-            //                 xhr.open('GET', 'https://raw.githubusercontent.com/benbalter/dc-wifi-social/master/bars.geojson', false);
-            //                 xhr.send();
-            //                 if (xhr.status != 200) {
-            //                     // обработать ошибку
-            //                     console.log(xhr.status + ': ' + xhr.statusText); // пример вывода: 404: Not Found
-            //                 } else {
-            //                     // вывести результат
-            //                     let {features:bars_features} = JSON.parse(xhr.response);
-            //                     return bars_features;
-            //                 }
+
 
         },
-        // onEachFeature__bars: ()=> {
-        //     let onEachFeature__bars = (feature, layer) => {
-        //         var popupContent = ()=>{
-        //             let content=""
-        //             for (let key in feature.properties) {
-        //                 if (key === "marker-symbol") {
-        //                            continue;
-        //                        }
-        //                  content+="<p>"+key+":" + feature.properties[key] + "</p>"
-        //             }
-        //          return content;
-        //         };
-        //         layer.bindPopup(popupContent());
-        //     };
-        //     return onEachFeature__bars;
-        // },
         onEachFeature: ()=> {
             let onEachFeature = (feature, layer) => {
                 var popupContent = ()=>{
@@ -135,19 +109,6 @@ const Model = {
                 }
             })
 
-            // let xhr = new XMLHttpRequest();
-            //
-            // xhr.open('GET', 'some-layer.json', false);
-            //
-            // xhr.send();
-            // if (xhr.status != 200) {
-            //     // обработать ошибку
-            //     console.log(xhr.status + ': ' + xhr.statusText); // пример вывода: 404: Not Found
-            // } else {
-            //     // вывести результат
-            //     let {features:some_features} = JSON.parse(xhr.response);
-            //     return some_features;
-            // }
 
         },
 

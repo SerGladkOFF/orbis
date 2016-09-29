@@ -108,13 +108,6 @@ if (localStorage.getItem("_center") &&
 
         map = Model.map();
 
-        // filter__name.addEventListener("keyup", (e)=> {
-        //     Control.filter(_data, _active_layer, Model.onEachFeature());
-        // });
-        // table.addEventListener("click", (e)=> {
-        //     Control.chooseMarker(e, _data, map)
-        // });
-
         L.control.layers(baselays).addTo(map);
         preload.classList.toggle("hide")
         resolve();
@@ -246,20 +239,3 @@ init.then(()=>{
 
 });
 
-//
-// let layerCreate = (_features,layer,layerName,center)=> {
-//
-//     _data = _features;
-//     _active_layer = layer;
-//     Model.handlbars({_data: _features});
-//     Control.saveStorage(center, layerName);
-//     L.geoJson(_features, {
-//         onEachFeature: Model.onEachFeature(),
-//         pointToLayer: function (feature, latlng) {
-//             return L.marker(latlng);
-//         }
-//     }).addTo(layer);
-//
-//
-//     preload.classList.toggle("hide")
-// }

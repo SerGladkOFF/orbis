@@ -161,13 +161,6 @@
 
 	        map = _model2.default.map();
 
-	        // filter__name.addEventListener("keyup", (e)=> {
-	        //     Control.filter(_data, _active_layer, Model.onEachFeature());
-	        // });
-	        // table.addEventListener("click", (e)=> {
-	        //     Control.chooseMarker(e, _data, map)
-	        // });
-
 	        L.control.layers(baselays).addTo(map);
 	        preload.classList.toggle("hide");
 	        resolve();
@@ -291,24 +284,6 @@
 	    });
 	});
 
-	//
-	// let layerCreate = (_features,layer,layerName,center)=> {
-	//
-	//     _data = _features;
-	//     _active_layer = layer;
-	//     Model.handlbars({_data: _features});
-	//     Control.saveStorage(center, layerName);
-	//     L.geoJson(_features, {
-	//         onEachFeature: Model.onEachFeature(),
-	//         pointToLayer: function (feature, latlng) {
-	//             return L.marker(latlng);
-	//         }
-	//     }).addTo(layer);
-	//
-	//
-	//     preload.classList.toggle("hide")
-	// }
-
 /***/ },
 /* 1 */
 /***/ function(module, exports) {
@@ -368,35 +343,7 @@
 	                resolve(bars_features);
 	            }
 	        });
-
-	        // var xhr = new XMLHttpRequest();
-	        //                 xhr.open('GET', 'https://raw.githubusercontent.com/benbalter/dc-wifi-social/master/bars.geojson', false);
-	        //                 xhr.send();
-	        //                 if (xhr.status != 200) {
-	        //                     // обработать ошибку
-	        //                     console.log(xhr.status + ': ' + xhr.statusText); // пример вывода: 404: Not Found
-	        //                 } else {
-	        //                     // вывести результат
-	        //                     let {features:bars_features} = JSON.parse(xhr.response);
-	        //                     return bars_features;
-	        //                 }
 	    },
-	    // onEachFeature__bars: ()=> {
-	    //     let onEachFeature__bars = (feature, layer) => {
-	    //         var popupContent = ()=>{
-	    //             let content=""
-	    //             for (let key in feature.properties) {
-	    //                 if (key === "marker-symbol") {
-	    //                            continue;
-	    //                        }
-	    //                  content+="<p>"+key+":" + feature.properties[key] + "</p>"
-	    //             }
-	    //          return content;
-	    //         };
-	    //         layer.bindPopup(popupContent());
-	    //     };
-	    //     return onEachFeature__bars;
-	    // },
 	    onEachFeature: function onEachFeature() {
 	        var onEachFeature = function onEachFeature(feature, layer) {
 	            var popupContent = function popupContent() {
@@ -454,20 +401,6 @@
 	                resolve(some_features);
 	            }
 	        });
-
-	        // let xhr = new XMLHttpRequest();
-	        //
-	        // xhr.open('GET', 'some-layer.json', false);
-	        //
-	        // xhr.send();
-	        // if (xhr.status != 200) {
-	        //     // обработать ошибку
-	        //     console.log(xhr.status + ': ' + xhr.statusText); // пример вывода: 404: Not Found
-	        // } else {
-	        //     // вывести результат
-	        //     let {features:some_features} = JSON.parse(xhr.response);
-	        //     return some_features;
-	        // }
 	    },
 
 	    some: function some() {
