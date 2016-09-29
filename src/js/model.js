@@ -2,12 +2,20 @@
 
 const Model = {
         map: function (layer) {
-            let map = L.map('mapid', {
+            let map;
+            if (layer) {
+                map = L.map('mapid', {
                 center: [55.75, 37.716],
                 zoom: 8,
                 layers:[layer]||null
-
             });
+            } else {
+                map = L.map('mapid', {
+                 center: [55.75, 37.716],
+                 zoom: 8,
+                 });
+            };
+
             L.tileLayer(
                 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
                 {

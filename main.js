@@ -176,11 +176,12 @@
 
 	init.then(function () {
 	    //забираем данные( фильтр ) из локального хранилища
-	    var _substr = localStorage.getItem("_filter");
-
-	    //приводим данные в соответсвтие с фильтром
-	    filter__name.value = _substr;
-	    _control2.default.filter(_data, _active_layer, _model2.default.onEachFeature());
+	    if (localStorage.getItem("_filter")) {
+	        var _substr = localStorage.getItem("_filter");
+	        //приводим данные в соответсвтие с фильтром
+	        filter__name.value = _substr;
+	        _control2.default.filter(_data, _active_layer, _model2.default.onEachFeature());
+	    }
 
 	    // обработчик клика на слой баров
 	    bars_control.addEventListener("click", function (e) {
@@ -314,12 +315,20 @@
 	});
 	var Model = {
 	    map: function map(layer) {
-	        var map = L.map('mapid', {
-	            center: [55.75, 37.716],
-	            zoom: 8,
-	            layers: [layer] || null
+	        var map = void 0;
+	        if (layer) {
+	            map = L.map('mapid', {
+	                center: [55.75, 37.716],
+	                zoom: 8,
+	                layers: [layer] || null
+	            });
+	        } else {
+	            map = L.map('mapid', {
+	                center: [55.75, 37.716],
+	                zoom: 8
+	            });
+	        };
 
-	        });
 	        L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 	            attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
 	        }).addTo(map);

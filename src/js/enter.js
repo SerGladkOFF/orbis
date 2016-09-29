@@ -124,11 +124,13 @@ if (localStorage.getItem("_center") &&
 
 init.then(()=>{
     //забираем данные( фильтр ) из локального хранилища
-    let _substr = localStorage.getItem("_filter");
+    if (localStorage.getItem("_filter")){
+        let _substr = localStorage.getItem("_filter");
+        //приводим данные в соответсвтие с фильтром
+        filter__name.value = _substr;
+        Control.filter(_data, _active_layer, Model.onEachFeature());
+    }
 
-    //приводим данные в соответсвтие с фильтром
-    filter__name.value = _substr;
-    Control.filter(_data, _active_layer, Model.onEachFeature());
 
     // обработчик клика на слой баров
     bars_control.addEventListener("click", (e)=> {
