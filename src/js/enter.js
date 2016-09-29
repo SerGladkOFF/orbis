@@ -150,7 +150,7 @@ init.then(()=>{
         _features = Model.bars_features();
         _features.then((_features)=> {
 
-            //запоминаем активный слой и объект данных
+            // //запоминаем активный слой и объект данных
             _data = _features;
             _active_layer = bars;
 
@@ -212,20 +212,21 @@ init.then(()=>{
         preload.classList.toggle("hide");
         _features = Model.metro_features();
         _features.then((_features)=> {
-            Control.layerCreate(_features,metro,"metro",[55.751, 37.716],_data,_active_layer);
-            // _data = _features;
-            // _active_layer = metro;
-            // Model.handlbars({_data: _features});
-            // Control.saveStorage([55.751, 37.716], "metro");
-            // L.geoJson(_features, {
-            //     onEachFeature: Model.onEachFeature(),
-            //     pointToLayer: function (feature, latlng) {
-            //         return L.marker(latlng);
-            //     }
-            // }).addTo(metro);
-            //
-            //
-            // preload.classList.toggle("hide")
+            _data = _features;
+             _active_layer = metro;
+            // Control.layerCreate(_features,metro,"metro",[55.751, 37.716],_data,_active_layer);
+
+            Model.handlbars({_data: _features});
+            Control.saveStorage([55.751, 37.716], "metro");
+            L.geoJson(_features, {
+                onEachFeature: Model.onEachFeature(),
+                pointToLayer: function (feature, latlng) {
+                    return L.marker(latlng);
+                }
+            }).addTo(metro);
+
+
+            preload.classList.toggle("hide")
         })
 
     });

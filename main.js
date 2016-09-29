@@ -201,7 +201,7 @@
 	        _features = _model2.default.bars_features();
 	        _features.then(function (_features) {
 
-	            //запоминаем активный слой и объект данных
+	            // //запоминаем активный слой и объект данных
 	            _data = _features;
 	            _active_layer = bars;
 
@@ -263,20 +263,20 @@
 	        preload.classList.toggle("hide");
 	        _features = _model2.default.metro_features();
 	        _features.then(function (_features) {
-	            _control2.default.layerCreate(_features, metro, "metro", [55.751, 37.716], _data, _active_layer);
-	            // _data = _features;
-	            // _active_layer = metro;
-	            // Model.handlbars({_data: _features});
-	            // Control.saveStorage([55.751, 37.716], "metro");
-	            // L.geoJson(_features, {
-	            //     onEachFeature: Model.onEachFeature(),
-	            //     pointToLayer: function (feature, latlng) {
-	            //         return L.marker(latlng);
-	            //     }
-	            // }).addTo(metro);
-	            //
-	            //
-	            // preload.classList.toggle("hide")
+	            _data = _features;
+	            _active_layer = metro;
+	            // Control.layerCreate(_features,metro,"metro",[55.751, 37.716],_data,_active_layer);
+
+	            _model2.default.handlbars({ _data: _features });
+	            _control2.default.saveStorage([55.751, 37.716], "metro");
+	            L.geoJson(_features, {
+	                onEachFeature: _model2.default.onEachFeature(),
+	                pointToLayer: function pointToLayer(feature, latlng) {
+	                    return L.marker(latlng);
+	                }
+	            }).addTo(metro);
+
+	            preload.classList.toggle("hide");
 	        });
 	    });
 
@@ -558,8 +558,8 @@
 	    },
 	    layerCreate: function layerCreate(_features, layer, layerName, center, _data, _active_layer) {
 
-	        _data = _features;
-	        _active_layer = layer;
+	        // _data = _features;
+	        // _active_layer = layer;
 	        _model2.default.handlbars({ _data: _features });
 	        Control.saveStorage(center, layerName);
 	        L.geoJson(_features, {

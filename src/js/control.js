@@ -56,8 +56,8 @@ const Control = {
             },
     layerCreate:(_features,layer,layerName,center,_data,_active_layer)=> {
 
-        _data = _features;
-        _active_layer = layer;
+        // _data = _features;
+        // _active_layer = layer;
         Model.handlbars({_data: _features});
         Control.saveStorage(center, layerName);
         L.geoJson(_features, {
